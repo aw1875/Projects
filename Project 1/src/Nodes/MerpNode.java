@@ -4,7 +4,6 @@ import Util.SymbolTable;
 
 public interface MerpNode {
 
-    //Test comment
     public enum NodeType {}
 
     public int evaluate(SymbolTable symbolTable);
