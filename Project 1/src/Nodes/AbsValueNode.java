@@ -1,4 +1,14 @@
 package Nodes;
 
-public class AbsValueNode {
+import Util.SymbolTable;
+
+public class AbsValueNode extends UnaryOperatorNode {
+
+    public AbsValueNode(MerpNode child) {
+
+    }
+
+    public int evaluate(SymbolTable symbolTable) {
+
+    }
 }
