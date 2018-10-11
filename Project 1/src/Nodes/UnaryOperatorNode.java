@@ -14,6 +14,7 @@ public class UnaryOperatorNode {
     }
 
     public java.lang.String toPrefixString() {
-
+        java.lang.String test = "";
+        return test;
     }
 }
