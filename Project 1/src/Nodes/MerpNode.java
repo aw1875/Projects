@@ -2,21 +2,61 @@ package Nodes;
 
 import Util.SymbolTable;
 
+/**
+ * Interface for all MerpNodes
+ */
 public interface MerpNode {
 
-    public enum NodeType {}
+    /**
+     * Enum to represent Node types
+     */
+    public enum NodeType{
+        BinaryOperation,
+        UnaryOperation,
+        Constant,
+        Variable
+    }
 
+    /**
+     * Evaluates the node
+     * @param symbolTable the symbol table to use for variable processing
+     * @return integer value of the node
+     */
     public int evaluate(SymbolTable symbolTable);
 
-    public java.lang.String toPrefixString();
+    /**
+     * Constructs prefix representation of the node
+     * @return prefix representation of the node
+     */
+    public String toPrefixString();
 
-    public java.lang.String toInfixString();
+    /**
+     * Constructs infix representation of the node
+     * @return prefix representation of the node
+     */
+    public String toInfixString();
 
-    public java.lang.String toPostfixString();
+    /**
+     * Constructs postfix representation of the node
+     * @return prefix representation of the node
+     */
+    public String toPostfixString();
 
+    /**
+     * gets the precedence of this node
+     * @return integer value of the node's precedence
+     */
     public int getPrecedence();
 
+    /**
+     * determines if the node is an operation node
+     * @return - true if an operation node, false otherwise
+     */
     public boolean isOperation();
 
-    public MerpNode.NodeType getNodeType();
+    /**
+     * Determines the node type
+     * @return the type of this node
+     */
+    public NodeType getNodeType();
 }
