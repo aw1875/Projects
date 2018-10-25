@@ -20,6 +20,6 @@ public class NegationNode extends UnaryOperatorNode {
      * @return the integer value of this node
      */
     public int evaluate(SymbolTable symbolTable) {
-        return Integer.parseInt("-") + child.evaluate(symbolTable);
+        return -1 * child.evaluate(symbolTable);
     }
 }

@@ -20,6 +20,6 @@ public class AdditionNode extends BinaryOperatorNode {
      * @return the integer value of this node
      */
     public int evaluate(SymbolTable symbolTable) {
-        return leftChild.evaluate(symbolTable) + Integer.parseInt(operator) + rightChild.evaluate(symbolTable);
+        return leftChild.evaluate(symbolTable) + rightChild.evaluate(symbolTable);
     }
 }

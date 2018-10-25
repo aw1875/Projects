@@ -27,7 +27,6 @@ public abstract class BinaryOperatorNode implements MerpNode {
      * @param leftChild
      */
     public void setLeftChild(MerpNode leftChild) {
-
         this.leftChild = leftChild;
     }
 
@@ -37,7 +36,6 @@ public abstract class BinaryOperatorNode implements MerpNode {
      * @param rightChild
      */
     public void setRightChild(MerpNode rightChild) {
-
         this.rightChild = rightChild;
     }
 
@@ -47,7 +45,6 @@ public abstract class BinaryOperatorNode implements MerpNode {
      * @return string representing the node as prefix notation
      */
     public String toPrefixString() {
-
         return operator + " " + leftChild + " " + rightChild;
     }
 
@@ -57,7 +54,6 @@ public abstract class BinaryOperatorNode implements MerpNode {
      * @return string representing the node as infix notation
      */
     public String toInfixString() {
-
         return leftChild + " " + operator + " " + rightChild;
     }
 
@@ -67,7 +63,6 @@ public abstract class BinaryOperatorNode implements MerpNode {
      * @return string representing the node as postfix notation
      */
     public String toPostfixString() {
-
         return leftChild + " " + rightChild + " " + operator;
     }
 
@@ -98,8 +93,7 @@ public abstract class BinaryOperatorNode implements MerpNode {
      * @return the type of this node
      */
     public MerpNode.NodeType getNodeType() {
-
-        return this.getNodeType();
+        return NodeType.BinaryOperation;
     }
 
 

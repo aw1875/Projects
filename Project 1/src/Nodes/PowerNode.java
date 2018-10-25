@@ -21,7 +21,7 @@ public class PowerNode extends BinaryOperatorNode {
      * @return the integer value of this node
      */
     public int evaluate(SymbolTable symbolTable) {
-        return leftChild.evaluate(symbolTable) + Integer.parseInt(operator) + rightChild.evaluate(symbolTable);
+        return (int)Math.pow(leftChild.evaluate(symbolTable),rightChild.evaluate(symbolTable));
     }
 
 }

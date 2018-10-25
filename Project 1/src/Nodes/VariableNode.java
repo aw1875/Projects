@@ -21,7 +21,7 @@ public class VariableNode implements MerpNode {
      * @return the integer value of this node
      */
     public int evaluate(SymbolTable symbolTable) {
-
+        return symbolTable.get(this.name);
     }
 
     /**
@@ -30,7 +30,7 @@ public class VariableNode implements MerpNode {
      * @return string representing the node as prefix notation
      */
     public java.lang.String toPrefixString() {
-
+        return this.name;
     }
 
     /**
@@ -39,7 +39,7 @@ public class VariableNode implements MerpNode {
      * @return string representing the node as infix notation
      */
     public java.lang.String toInfixString() {
-
+        return this.name;
     }
 
     /**
@@ -48,16 +48,16 @@ public class VariableNode implements MerpNode {
      * @return string representing the node as postfix notation
      */
     public java.lang.String toPostfixString() {
-
+        return this.name;
     }
 
     /**
      * Returns the precedence of this node
      *
-     * @return returns the precedence of CONSTANT
+     * @return returns the precedence of CONSTANT, which is 3.
      */
     public int getPrecedence() {
-
+        return 3;
     }
 
     /**
@@ -66,7 +66,7 @@ public class VariableNode implements MerpNode {
      * @return - true if an operation node, false otherwise
      */
     public boolean isOperation() {
-
+        return false;
     }
 
     /**
@@ -75,6 +75,6 @@ public class VariableNode implements MerpNode {
      * @return the type of this node
      */
     public MerpNode.NodeType getNodeType() {
-
+        return NodeType.Variable;
     }
 }

@@ -20,7 +20,7 @@ public class SquareRootNode extends UnaryOperatorNode {
      * @return the integer value of this node
      */
     public int evaluate(SymbolTable symbolTable) {
-        return Integer.parseInt(operater) + child.evaluate(symbolTable);
+        return (int)Math.sqrt(child.evaluate(symbolTable));
     }
 
 }

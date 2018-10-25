@@ -81,7 +81,7 @@ public abstract class UnaryOperatorNode implements MerpNode {
      * @return the type of this node
      */
     public MerpNode.NodeType getNodeType() {
-        return this.getNodeType();
+        return NodeType.UnaryOperation;
     }
 
 }

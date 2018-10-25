@@ -18,6 +18,6 @@ public abstract class BooleanOperatorNode extends BinaryOperatorNode {
      * @return returns the precedence of BOOLEAN
      */
     public int getPrecedence() {
-        return Precedence.BOOLEAN.getPrecedence();
+        return precedence.getPrecedence();
     }
 }
