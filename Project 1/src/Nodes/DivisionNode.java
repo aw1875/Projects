@@ -21,6 +21,9 @@ public class DivisionNode extends BinaryOperatorNode {
      * @return the integer value of this node
      */
     public int evaluate(SymbolTable symbolTable) {
+        if (rightChild.evaluate(symbolTable) == 0) {
+            Util.Errors.error("Dividing by 0 would come back as undefined", null); // Get error if trying to divide by 0
+        }
         return leftChild.evaluate(symbolTable) / rightChild.evaluate(symbolTable);
     }
 }
