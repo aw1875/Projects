@@ -1,9 +1,11 @@
 package Processors;
 
+import Nodes.MerpNode;
 import Util.SymbolTable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class EquationProcessor {
 
@@ -13,6 +15,7 @@ public class EquationProcessor {
 
     /**
      * Constructor to create an Equation Processor. Creates an empty SymbolTable.
+     *
      * @param equations
      * @param processor
      */
@@ -27,7 +30,14 @@ public class EquationProcessor {
      */
     public void processEquations() {
         for (String input : equations) {
-            processEquation(input);
+            ArrayList<String> equation = new ArrayList<String>(Arrays.asList(input.split("=")));
+            if (equation.size() > 1) {
+                String left = equation.get(0).trim();
+                ArrayList<String> eq = new ArrayList<String>(Arrays.asList(equation.get(1).trim().split(" ")));
+                this.processor.constructTree(eq);
+                int right = processor.evaluateTree(symbolTable);
+                symbolTable.put(left, right);
+            }
         }
     }
 
@@ -35,28 +45,7 @@ public class EquationProcessor {
      * Process equation from given input
      * @param eq
      */
-    private void processEquation(java.lang.String eq) {
-        String equation[] = eq.split(" = ");
-        if (equation.length < 2) {
-            String left[] = equation[0].trim().split(" ");
-            ArrayList<String> tokens = new ArrayList<>();
-            for (String i : left) {
-                tokens.add(i);
-            }
-            MerpInfixProcessor mip = new MerpInfixProcessor();
-            mip.constructTree(tokens);
-        } else {
-            String left = equation[0].trim();
-            String right[] = equation[1].trim().split(" ");
-            ArrayList<String> tokens = new ArrayList<>();
-            for (String i : right) {
-                tokens.add(i);
-            }
-            MerpInfixProcessor mip = new MerpInfixProcessor();
-            mip.constructTree(tokens);
-        }
-        //ArrayList<String> equation = new ArrayList<>(Arrays.asList(eq.split(" ")));
+/*    private void processEquation(java.lang.String eq) {
 
-
-    }
+    }*/
 }
