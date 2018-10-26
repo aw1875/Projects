@@ -13,7 +13,9 @@ public class MerpPostfixProcessor extends MerpProcessor {
      * @param tokens list of IerpNodes used to create the pares tree
      */
     public void constructTree(java.util.ArrayList<java.lang.String> tokens) {
+        for (String i : tokens) {
 
+        }
     }
 
     /**
@@ -21,7 +23,7 @@ public class MerpPostfixProcessor extends MerpProcessor {
      * @param tokens
      * @return current root ogf the parse tree
      */
-    private MerpNode constructTreeHelper(java.util.ArrayList<java.lang.String> tokens) {
+/*    private MerpNode constructTreeHelper(java.util.ArrayList<java.lang.String> tokens) {
 
-    }
+    }*/
 }
