@@ -10,7 +10,7 @@ public class AbsValueNode extends UnaryOperatorNode {
      * @param child
      */
     public AbsValueNode(MerpNode child) {
-        super(child, precedence.MULT_DIVIDE, "|");
+        super(child, Precedence.MULT_DIVIDE, "|");
     }
 
     /**
