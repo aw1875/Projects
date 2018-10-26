@@ -1,5 +1,6 @@
 package Nodes;
 
+import Util.Errors;
 import Util.SymbolTable;
 
 public class SquareRootNode extends UnaryOperatorNode {
@@ -20,6 +21,9 @@ public class SquareRootNode extends UnaryOperatorNode {
      * @return the integer value of this node
      */
     public int evaluate(SymbolTable symbolTable) {
+        if (child.evaluate(symbolTable) < 0) {
+            Util.Errors.error("Taking the square root of a negative number would result in an imaginary number", null); // Get error if number is a negative number.
+        }
         return (int)Math.sqrt(child.evaluate(symbolTable));
     }
 

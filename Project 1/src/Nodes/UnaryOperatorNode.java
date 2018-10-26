@@ -2,7 +2,7 @@ package Nodes;
 
 public abstract class UnaryOperatorNode implements MerpNode {
     protected MerpNode child;
-    protected java.lang.String operater;
+    protected java.lang.String operator;
     protected Precedence precedence;
 
     /**
@@ -10,12 +10,12 @@ public abstract class UnaryOperatorNode implements MerpNode {
      *
      * @param child
      * @param precedence
-     * @param operater
+     * @param operator
      */
-    public UnaryOperatorNode(MerpNode child, Precedence precedence, java.lang.String operater) {
+    public UnaryOperatorNode(MerpNode child, Precedence precedence, java.lang.String operator) {
         this.child = child;
         this.precedence = precedence;
-        this.operater = operater;
+        this.operator = operator;
     }
 
     /**
@@ -33,7 +33,7 @@ public abstract class UnaryOperatorNode implements MerpNode {
      * @return string representing the node as prefix notation
      */
     public java.lang.String toPrefixString() {
-        return operater + " " + child;
+        return operator + " " + child;
     }
 
     /**
@@ -42,7 +42,7 @@ public abstract class UnaryOperatorNode implements MerpNode {
      * @return string representing the node as infix notation
      */
     public java.lang.String toInfixString() {
-        return child + " " + operater;
+        return child + " " + operator;
     }
 
     /**
@@ -51,7 +51,7 @@ public abstract class UnaryOperatorNode implements MerpNode {
      * @return string representing the node as postfix notation
      */
     public java.lang.String toPostfixString() {
-        return child + " " + operater;
+        return child + " " + operator;
     }
 
     /**
@@ -69,7 +69,7 @@ public abstract class UnaryOperatorNode implements MerpNode {
      * @return - true if an operation node, false otherwise
      */
     public boolean isOperation() {
-        if (this.operater != null) {
+        if (this.operator != null) {
             return true;
         }
         return false;
