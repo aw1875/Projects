@@ -1,7 +1,10 @@
 package Processors;
 
+import Nodes.BinaryOperatorNode;
 import Nodes.ConstantNode;
 import Nodes.MerpNode;
+import Nodes.UnaryOperatorNode;
+
 import java.util.*;
 
 public class MerpPrefixProcessor extends MerpProcessor {
@@ -16,17 +19,26 @@ public class MerpPrefixProcessor extends MerpProcessor {
      * @param tokens list of IerpNodes used to create the pares tree
      */
     public void constructTree(java.util.ArrayList<java.lang.String> tokens) {
-        Stack<MerpNode> op = new Stack<>();
-        Stack<MerpNode> val = new Stack<>();
-        for (String i : tokens) {
-            MerpNode tempNode = createMerpNode(i);
-            if (tempNode.getNodeType().equals(MerpNode.NodeType.Constant) || tempNode.getNodeType().equals(MerpNode.NodeType.Variable)) {
-                val.push(tempNode);
+        Stack<MerpNode> stack = new Stack<>();
+        for (int i = tokens.size() - 1; i >= 0; i --) {
+            MerpNode currNode = createMerpNode(tokens.get(i));
+            if (currNode.getNodeType().equals(MerpNode.NodeType.Constant) || currNode.getNodeType().equals(MerpNode.NodeType.Variable)) {
+                stack.push(currNode);
             } else {
-                op.push(tempNode);
+                if (currNode instanceof BinaryOperatorNode) {
+                    MerpNode left = stack.pop();
+                    MerpNode right = stack.pop();
+                    ((BinaryOperatorNode) currNode).setLeftChild(left);
+                    ((BinaryOperatorNode) currNode).setRightChild(right);
+                    stack.push(currNode);
+                } else if (currNode instanceof UnaryOperatorNode) {
+                    MerpNode child = stack.pop();
+                    ((UnaryOperatorNode) currNode).setChild(child);
+                    stack.push(currNode);
+                }
             }
         }
-
+        tree = stack.pop();
     }
 
     /**
@@ -43,5 +55,6 @@ public class MerpPrefixProcessor extends MerpProcessor {
         } else if (newNode.equals(MerpNode.NodeType.BinaryOperation)) {
             newNode.
         }
+
     }*/
 }

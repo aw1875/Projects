@@ -41,8 +41,8 @@ public class MerpInfixProcessor extends MerpProcessor {
         while (!(op.empty())) {
             MerpNode operator = op.pop();
             if (operator instanceof BinaryOperatorNode) {
-                MerpNode left = val.pop();
                 MerpNode right = val.pop();
+                MerpNode left = val.pop();
                 ((BinaryOperatorNode) operator).setLeftChild(left);
                 ((BinaryOperatorNode) operator).setRightChild(right);
                 val.push(operator);
