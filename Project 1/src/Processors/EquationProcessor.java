@@ -14,7 +14,9 @@ public class EquationProcessor {
      * @param processor
      */
     public EquationProcessor(java.util.ArrayList<java.lang.String> equations, MerpProcessor processor) {
-
+        this.equations = equations;
+        this.processor = processor;
+        this.symbolTable = new SymbolTable();
     }
 
     /**
