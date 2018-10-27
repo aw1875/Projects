@@ -33,7 +33,7 @@ public abstract class UnaryOperatorNode implements MerpNode {
      * @return string representing the node as prefix notation
      */
     public java.lang.String toPrefixString() {
-        return operator + " " + child;
+        return operator + " " + child.toPrefixString();
     }
 
     /**
@@ -42,7 +42,7 @@ public abstract class UnaryOperatorNode implements MerpNode {
      * @return string representing the node as infix notation
      */
     public java.lang.String toInfixString() {
-        return child + " " + operator;
+        return "(" + operator + " " + child.toInfixString() + ")";
     }
 
     /**
@@ -51,7 +51,7 @@ public abstract class UnaryOperatorNode implements MerpNode {
      * @return string representing the node as postfix notation
      */
     public java.lang.String toPostfixString() {
-        return child + " " + operator;
+        return child.toPostfixString() + " " + operator;
     }
 
     /**

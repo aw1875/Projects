@@ -45,7 +45,7 @@ public abstract class BinaryOperatorNode implements MerpNode {
      * @return string representing the node as prefix notation
      */
     public String toPrefixString() {
-        return operator + " " + leftChild + " " + rightChild;
+        return operator + " " + leftChild.toPrefixString() + " " + rightChild.toPrefixString();
     }
 
     /**
@@ -54,7 +54,7 @@ public abstract class BinaryOperatorNode implements MerpNode {
      * @return string representing the node as infix notation
      */
     public String toInfixString() {
-        return leftChild + " " + operator + " " + rightChild;
+        return "(" + leftChild.toInfixString() + " " + operator + " " + rightChild.toInfixString() + ")";
     }
 
     /**
@@ -63,7 +63,7 @@ public abstract class BinaryOperatorNode implements MerpNode {
      * @return string representing the node as postfix notation
      */
     public String toPostfixString() {
-        return leftChild + " " + rightChild + " " + operator;
+        return leftChild.toPostfixString() + " " + rightChild.toPostfixString() + " " + operator;
     }
 
     /**

@@ -8,7 +8,7 @@ import Util.SymbolTable;
 public interface MerpNode {
 
     /**
-     * Enum to represent Node types
+     * Enum to represent Node types {{}}
      */
     public enum NodeType{
         BinaryOperation,
