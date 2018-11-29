@@ -1,8 +1,12 @@
+/**
+ * file: TravelAgency.java
+ * language: java
+ * author: Adam Wolf
+ */
+
 package stu;
 
 import backtracking.Configuration;
-
-import javax.swing.text.html.Option;
 import java.util.*;
 
 public class TravelAgency {

@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d826014-2813-47b6-9557-223c63dbcf3d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/stu/TravelAgency.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/stu/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stu/Route.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stu/Transportation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stu/Transportation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stu/TransportationReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stu/TransportationReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stu/TravelAgency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stu/TravelAgency.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/stu/Route.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-180">
-              <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+            <state>
+              <caret lean-forward="true" />
             </state>
           </provider>
         </entry>
@@ -35,7 +33,7 @@
         <entry file="file://$PROJECT_DIR$/src/stu/Transportation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+              <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
               <folding>
                 <element signature="e#626#627#0" expanded="true" />
                 <element signature="e#656#657#0" expanded="true" />
@@ -48,37 +46,23 @@
         <entry file="file://$PROJECT_DIR$/src/stu/TransportationReader.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="174">
-              <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+              <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/stu/TravelAgency.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
-              <caret line="70" column="136" selection-start-line="70" selection-start-column="136" selection-end-line="70" selection-end-column="136" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#566#567#0" expanded="true" />
-                <element signature="e#600#601#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tests/TestReader.java">
+        <entry file="file://$PROJECT_DIR$/src/stu/TravelAgency.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
+            <state relative-caret-position="225">
+              <caret line="15" column="98" selection-start-line="15" selection-start-column="98" selection-end-line="15" selection-end-column="98" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2230#2231#0" expanded="true" />
-                <element signature="e#2258#2259#0" expanded="true" />
+                <element signature="e#566#567#0" expanded="true" />
+                <element signature="e#600#601#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -107,10 +91,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/tests/TestReader.java" />
-        <option value="$PROJECT_DIR$/src/stu/Route.java" />
         <option value="$PROJECT_DIR$/src/stu/Transportation.java" />
         <option value="$PROJECT_DIR$/src/stu/TransportationReader.java" />
         <option value="$PROJECT_DIR$/src/stu/TravelAgency.java" />
+        <option value="$PROJECT_DIR$/src/stu/Route.java" />
       </list>
     </option>
   </component>
@@ -144,6 +128,12 @@
               <item name="Project 2" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project 2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="backtracking" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project 2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project 2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="stu" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -157,7 +147,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543530666485" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543530959145" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -228,7 +218,7 @@
       <updated>1543450957823</updated>
       <workItem from="1543450959478" duration="819000" />
       <workItem from="1543519001144" duration="3087000" />
-      <workItem from="1543528959404" duration="1699000" />
+      <workItem from="1543528959404" duration="1997000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed project layout and added required text files">
       <created>1543451667284</created>
@@ -258,11 +248,18 @@
       <option name="project" value="LOCAL" />
       <updated>1543529626187</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Cleaned up all code and comments in all files and stubbed out all functions for TravelAgency">
+      <created>1543530705349</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1543530705349</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5605000" />
+    <option name="totallyTimeSpent" value="5903000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-30" width="1440" height="930" extended-state="6" />
@@ -308,7 +305,8 @@
     <MESSAGE value="Completed Route" />
     <MESSAGE value="Completed Transportation" />
     <MESSAGE value="Completed TransportationReader" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed TransportationReader" />
+    <MESSAGE value="Cleaned up all code and comments in all files and stubbed out all functions for TravelAgency" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up all code and comments in all files and stubbed out all functions for TravelAgency" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/testLarger.txt" />
@@ -335,17 +333,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/stu/Route.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-180">
-          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/stu/Transportation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
           <folding>
             <element signature="e#626#627#0" expanded="true" />
             <element signature="e#656#657#0" expanded="true" />
@@ -356,22 +347,43 @@
     <entry file="file://$PROJECT_DIR$/src/stu/TransportationReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
-          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/backtracking/Configuration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/backtracking/Backtracker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-45">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/stu/TravelAgency.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="70" column="136" selection-start-line="70" selection-start-column="136" selection-end-line="70" selection-end-column="136" />
+        <state relative-caret-position="225">
+          <caret line="15" column="98" selection-start-line="15" selection-start-column="98" selection-end-line="15" selection-end-column="98" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#566#567#0" expanded="true" />
             <element signature="e#600#601#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stu/Route.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
         </state>
       </provider>
     </entry>
