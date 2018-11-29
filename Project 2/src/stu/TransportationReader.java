@@ -8,8 +8,13 @@ public class TransportationReader {
     private static Map<Integer, Route> routes;
     private static Map<Integer, Transportation> map;
 
+    /**
+     * Will read in the Transportations from a file and return them as a map
+     *
+     * @param fName - File name
+     * @return map named map
+     */
     public static Map readTransportations(String fName) {
-
         // Create Maps
         routes = new HashMap<>();
         map = new HashMap<>();
@@ -19,7 +24,7 @@ public class TransportationReader {
             BufferedReader bf = new BufferedReader(new FileReader(fName));
             String input;
 
-            while((input = bf.readLine()) != null) {
+            while ((input = bf.readLine()) != null) {
                 if (input.equals("Routes")) {
                     while (!(input = bf.readLine()).equals("Transportations")) {
                         String currLine[] = input.split(",");
@@ -28,7 +33,7 @@ public class TransportationReader {
                     }
                 }
                 if (input.equals("Transportations")) {
-                    while((input = bf.readLine()) != null) {
+                    while ((input = bf.readLine()) != null) {
                         String currLine[] = input.split(",");
                         Transportation newTP = new Transportation(Integer.valueOf(currLine[0].trim()), currLine[1].trim(), Integer.valueOf(currLine[2].trim()), Integer.valueOf(currLine[4].trim()), routes.get(Integer.valueOf(currLine[3].trim())));
                         map.put(newTP.getId(), newTP);

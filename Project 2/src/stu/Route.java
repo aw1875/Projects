@@ -10,10 +10,11 @@ public class Route {
 
     /**
      * Take in each of the private states declared and set them
-     * @param id
-     * @param starting
-     * @param ending
-     * @param distance
+     *
+     * @param id       - Route ID
+     * @param starting - Starting location
+     * @param ending   - Ending location
+     * @param distance - Distance of route
      */
     public Route(int id, String starting, String ending, int distance) {
         this.id = id;
@@ -24,6 +25,7 @@ public class Route {
 
     /**
      * Get int id
+     *
      * @return id
      */
     public int getId() {
@@ -32,6 +34,7 @@ public class Route {
 
     /**
      * Get String starting
+     *
      * @return starting
      */
     public String getStart() {
@@ -40,6 +43,7 @@ public class Route {
 
     /**
      * Get String ending
+     *
      * @return ending
      */
     public String getEnd() {
@@ -48,6 +52,7 @@ public class Route {
 
     /**
      * Get int distance
+     *
      * @return distance
      */
     public int getDistance() {
@@ -56,6 +61,7 @@ public class Route {
 
     /**
      * Print out the class
+     *
      * @return class as a string
      */
     public String toString() {
