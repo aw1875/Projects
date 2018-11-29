@@ -5,10 +5,16 @@ import java.util.*;
 
 public class TransportationReader {
 
-    private static Map<Integer, Route> routes = new HashMap<>();
-    private static Map<Integer, Transportation> map = new HashMap<>();
+    private static Map<Integer, Route> routes;
+    private static Map<Integer, Transportation> map;
 
     public static Map readTransportations(String fName) {
+
+        // Create Maps
+        routes = new HashMap<>();
+        map = new HashMap<>();
+
+        // Read File
         try {
             BufferedReader bf = new BufferedReader(new FileReader(fName));
             String input;
@@ -31,8 +37,7 @@ public class TransportationReader {
             }
             return map;
         } catch (FileNotFoundException e) {
-            System.out.println(e.getMessage());
-            System.out.println("Please check the current directory.");
+            return map;
         } catch (IOException ioe) {
             System.out.println(ioe.getMessage());
         }
