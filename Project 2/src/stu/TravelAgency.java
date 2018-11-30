@@ -6,7 +6,10 @@
 
 package stu;
 
-import backtracking.Configuration;
+import backtracking.*;
+import dijkstras.Graph;
+import dijkstras.Node;
+
 import java.util.*;
 
 public class TravelAgency {
@@ -57,7 +60,25 @@ public class TravelAgency {
      * @return List of the Transportation's in the order they are used to get between the paths, or an empty List if no such path exits
      */
     public static List<Transportation> shortestPath(Map<Integer, Transportation> m, String start, String end) {
-        return null; // FOR NOW
+
+        // Create list of results
+        List<Transportation> result = new LinkedList<>();
+        Map<String, Node> temp = new HashMap<>();
+
+        // Test
+        for (int i = 0; i < m.size(); i++) {
+            if (!temp.containsKey(m.get(i).getRoute().getStart())) {
+                Node currNode = new Node(String.valueOf(m.get(i).getRoute().getStart()));
+                temp.put(String.valueOf(m.get(i).getRoute().getStart()), currNode);
+            } else {
+                temp.get(String.valueOf(m.get(i).getRoute().getStart())).addNeighbor(new Node(String.valueOf(m.get(i).getRoute().getEnd())));
+            }
+        }
+
+        Graph g = new Graph(temp);
+
+
+        return result; // FOR NOW
     }
 
     /**
