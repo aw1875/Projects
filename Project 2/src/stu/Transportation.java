@@ -1,3 +1,9 @@
+/**
+ * file: Transportation.java
+ * language: java
+ * author: Adam Wolf
+ */
+
 package stu;
 
 public class Transportation {
@@ -10,11 +16,12 @@ public class Transportation {
 
     /**
      * Take in each of the private states declared and set them
-     * @param id
-     * @param type
-     * @param cost
-     * @param time
-     * @param route
+     *
+     * @param id    - Transportation ID
+     * @param type  - Type of transportation
+     * @param cost  - Cost of transportation
+     * @param time  - Time for trip
+     * @param route - Route it will take
      */
     public Transportation(int id, String type, int cost, int time, Route route) {
         this.id = id;
@@ -26,6 +33,7 @@ public class Transportation {
 
     /**
      * Get int id
+     *
      * @return id
      */
     public int getId() {
@@ -34,6 +42,7 @@ public class Transportation {
 
     /**
      * Get String type
+     *
      * @return type
      */
     public String getType() {
@@ -42,6 +51,7 @@ public class Transportation {
 
     /**
      * Get int cost
+     *
      * @return cost
      */
     public int getCost() {
@@ -50,6 +60,7 @@ public class Transportation {
 
     /**
      * Get int time
+     *
      * @return time
      */
     public int getTime() {
@@ -58,6 +69,7 @@ public class Transportation {
 
     /**
      * Get Route route
+     *
      * @return route
      */
     public Route getRoute() {
@@ -66,6 +78,7 @@ public class Transportation {
 
     /**
      * Print out the class
+     *
      * @return class as a string
      */
     public String toString() {

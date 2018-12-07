@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Routes
 1, RIT, NYC, 300
 3, RIT, Bos, 250
@@ -5,3 +6,12 @@ Transportations
 1, Bicycle, 25, 1, 1000
 2, Bus, 100, 3, 200
 3, Train, 200, 1, 300
+=======
+Routes
+1, RIT, NYC, 300
+3, RIT, Bos, 250
+Transportations
+1, Bicycle, 25, 1, 1000
+2, Bus, 100, 3, 200
+3, Train, 200, 1, 300
+>>>>>>> refs/remotes/origin/master
