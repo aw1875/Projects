@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Testing isThereAPath
 	All tests passed
 
@@ -32,39 +31,4 @@ Testing quickestPath
 40: Train, cost 140, route 17, time 500
 	stu.Route: 17: NYC to Det, 400 distance
 10: Plane, cost 200, route 4, time 300
-=======
-Testing isThereAPath
-	All tests passed
-
-Testing leastStops
-	All tests passed
-
-Testing canMakeItHomeCost
-	All tests passed
-
-Testing shortestPath
-1: Bicycle, cost 25, route 1, time 1000
-	stu.Route: 1: RIT to NYC, 300 distance
-39: Bus, cost 100, route 17, time 600
-	stu.Route: 17: NYC to Det, 400 distance
-10: Plane, cost 200, route 4, time 300
-	stu.Route: 4: Det to Sea, 900 distance
-
-Testing cheapestPath
-8: Bicycle, cost 10, route 3, time 1600
-	stu.Route: 3: RIT to Bos, 250 distance
-5: Boat, cost 10, route 2, time 150
-	stu.Route: 2: Bos to NYC, 150 distance
-39: Bus, cost 100, route 17, time 600
-	stu.Route: 17: NYC to Det, 400 distance
-11: Rental, cost 100, route 4, time 1000
-	stu.Route: 4: Det to Sea, 900 distance
-
-Testing quickestPath
-3: Airplane, cost 145, route 1, time 60
-	stu.Route: 1: RIT to NYC, 300 distance
-40: Train, cost 140, route 17, time 500
-	stu.Route: 17: NYC to Det, 400 distance
-10: Plane, cost 200, route 4, time 300
->>>>>>> refs/remotes/origin/master
 	stu.Route: 4: Det to Sea, 900 distance
