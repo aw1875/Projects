@@ -29,6 +29,7 @@ public class TransportationReader {
                     }
                 }
             }
+            bf.close();
             return map;
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
