@@ -11,9 +11,30 @@ import dfs_bfs.*;
 import dfs_bfs.LinkedGraph;
 import dijkstras.Node;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
-public class TravelAgency {
+public class TravelAgency extends dijkstras.Graph {
+    private Map<Integer, Transportation> m;
+    private String start;
+    private String end;
+    private int maxCost;
+
+
+    /**
+     * Constructor.
+     * *
+     *
+     * @param graph the graph to search
+     */
+    public TravelAgency(Map<String, Node> graph) {
+        super(graph);
+    }
+
+    @Override
+    protected void dijkstra(Node startNode, Map<Node, Integer> distance, Map<Node, Node> predecessors) {
+        super.dijkstra(startNode, distance, predecessors);
+    }
 
     /**
      * Will use DFS to determine if there is a path home.
@@ -117,7 +138,11 @@ public class TravelAgency {
      * @return configuration inside of the Optional if successful, otherwise it will return an empty Optional
      */
     public static Optional<Configuration> canMakeItHomeCost(Map<Integer, Transportation> m, String start, String end, int maxCost) {
-        return null; // FOR NOW
+        // I'm having problems with this one, so it doesn't seem to work.
+        MakeHome home = new MakeHome(m, start, end, maxCost);
+        Backtracker b1 = new Backtracker(false);
+        Optional<Configuration> solution = b1.solve(home);
+        return solution;
     }
 
     /**
@@ -131,21 +156,58 @@ public class TravelAgency {
     public static List<Transportation> shortestPath(Map<Integer, Transportation> m, String start, String end) {
         // Create list of results
         List<Transportation> result = new LinkedList<>();
-        Map<String, Node> graph = new HashMap<>();
+        Map<String, Node> map = new HashMap<>();
 
-        // Create graph
+        // Create map
         for (Transportation value : m.values()) {
             Node currNode = new Node(value.getRoute().getStart());
-            if (!graph.containsKey(value.getRoute().getStart())) {
-                currNode.addNeighbor(new Node(value.getRoute().getEnd()), value.getRoute().getDistance());
-                graph.put(value.getRoute().getStart(), currNode);
+            if (!map.containsKey(value.getRoute().getStart())) {
+                if (!map.containsKey(value.getRoute().getEnd())) {
+                    currNode.addNeighbor(new Node(value.getRoute().getEnd()), value.getRoute().getDistance());
+                    map.put(value.getRoute().getStart(), currNode);
+                    map.put(value.getRoute().getEnd(), new Node(value.getRoute().getEnd()));
+                } else {
+                    currNode.addNeighbor(map.get(value.getRoute().getEnd()), value.getRoute().getDistance());
+                    map.put(value.getRoute().getEnd(), map.get(value.getRoute().getEnd()));
+                }
             } else {
-                graph.get(value.getRoute().getStart()).addNeighbor(new Node(value.getRoute().getEnd()), value.getRoute().getDistance());
+                map.get(value.getRoute().getStart()).addNeighbor(new Node(value.getRoute().getEnd()), value.getRoute().getDistance());
             }
         }
-        dijkstras.Graph dg = new dijkstras.Graph(graph);
 
-        return result; // FOR NOW
+        // Create data for calling dijkstra later
+        Node firstNode = map.get(start);
+        Node lastNode = map.get(end);
+        Map<Node, Integer> distance = new HashMap<>();
+        Map<Node, Node> predecessors = new HashMap<>();
+        List<Node> route = new LinkedList<>();
+
+        // Using extension of Dijkstra's Graph to call dijkstra function
+        TravelAgency graph = new TravelAgency(map);
+        graph.dijkstra(firstNode, distance, predecessors);
+
+        // Add to routes from lastNode until firstNode
+        if (distance.get(lastNode) != null) {
+            Node currNode = lastNode;
+            while (!currNode.equals(firstNode)) {
+                route.add(0, currNode);
+                currNode = predecessors.get(currNode);
+            }
+            route.add(0, firstNode);
+        } else {
+            return result;
+        }
+
+        // Compare route list to Transportation values in map m and add to result if it is a path
+        for (int i = 0; i < route.size() - 1; i++) {
+            for (Transportation value : m.values()) {
+                if (route.get(i).getName().equals(value.getRoute().getStart()) && route.get(i + 1).getName().equals(value.getRoute().getEnd())) {
+                    result.add(m.get(value.getId()));
+                    break;
+                }
+            }
+        }
+        return result;
     }
 
     /**
@@ -159,17 +221,68 @@ public class TravelAgency {
     public static List<Transportation> cheapestPath(Map<Integer, Transportation> m, String start, String end) {
         // Create list of results
         List<Transportation> result = new LinkedList<>();
-        Map<String, Node> graph = new HashMap<>();
+        Map<String, Node> map = new HashMap<>();
 
-        // Create graph
+        // Create map
         for (Transportation value : m.values()) {
             Node currNode = new Node(value.getRoute().getStart());
-            if (!graph.containsKey(value.getRoute().getStart())) {
-                currNode.addNeighbor(new Node(value.getRoute().getEnd()), value.getCost());
-                graph.put(value.getRoute().getStart(), currNode);
+            if (!map.containsKey(value.getRoute().getStart())) {
+                if (!map.containsKey(value.getRoute().getEnd())) {
+                    currNode.addNeighbor(new Node(value.getRoute().getEnd()), value.getRoute().getDistance());
+                    map.put(value.getRoute().getStart(), currNode);
+                    map.put(value.getRoute().getEnd(), new Node(value.getRoute().getEnd()));
+                } else {
+                    currNode.addNeighbor(map.get(value.getRoute().getEnd()), value.getRoute().getDistance());
+                    map.put(value.getRoute().getEnd(), map.get(value.getRoute().getEnd()));
+                }
             } else {
-                graph.get(value.getRoute().getStart()).addNeighbor(new Node(value.getRoute().getEnd()), value.getCost());
+                map.get(value.getRoute().getStart()).addNeighbor(new Node(value.getRoute().getEnd()), value.getRoute().getDistance());
             }
+        }
+
+        // Create data for calling dijkstra later
+        Node firstNode = map.get(start);
+        Node lastNode = map.get(end);
+        Map<Node, Integer> distance = new HashMap<>();
+        Map<Node, Node> predecessors = new HashMap<>();
+        List<Node> route = new LinkedList<>();
+
+        // Using extension of Dijkstra's Graph to call dijkstra function
+        TravelAgency graph = new TravelAgency(map);
+        graph.dijkstra(firstNode, distance, predecessors);
+
+        // Add to routes from lastNode until firstNode
+        if (distance.get(lastNode) != null) {
+            Node currNode = lastNode;
+            while (!currNode.equals(firstNode)) {
+                route.add(0, currNode);
+                currNode = predecessors.get(currNode);
+            }
+            route.add(0, firstNode);
+        } else {
+            return result;
+        }
+
+        // Compare route list to Transportation values in map m and add to result if it is a path
+        for (int i = 0; i < route.size() - 1; i++) {
+
+            // Will be changed to first option after first iteration (mostly just a placeholder)
+            int maxCost = Integer.MAX_VALUE;
+
+            // Create Transportation id variable to add to result after determining if it is the cheapest
+            int id = 0;
+
+            // Iterate through m values now
+            for (Transportation value : m.values()) {
+                if (route.get(i).getName().equals(value.getRoute().getStart()) && route.get(i + 1).getName().equals(value.getRoute().getEnd())) {
+                    if (maxCost > value.getCost()) {
+                        maxCost = value.getCost();
+                        id = value.getId();
+                    }
+
+                }
+            }
+            result.add(m.get(id));
         }
         return result;
     }
@@ -185,18 +298,66 @@ public class TravelAgency {
     public static List<Transportation> quickestPath(Map<Integer, Transportation> m, String start, String end) {
         // Create list of results
         List<Transportation> result = new LinkedList<>();
-        Map<String, Node> graph = new HashMap<>();
+        Map<String, Node> map = new HashMap<>();
 
-        // Create graph
+        // Create map
         for (Transportation value : m.values()) {
             Node currNode = new Node(value.getRoute().getStart());
-            if (!graph.containsKey(value.getRoute().getStart())) {
-                currNode.addNeighbor(new Node(value.getRoute().getEnd()), value.getTime());
-                graph.put(value.getRoute().getStart(), currNode);
+            if (!map.containsKey(value.getRoute().getStart())) {
+                if (!map.containsKey(value.getRoute().getEnd())) {
+                    currNode.addNeighbor(new Node(value.getRoute().getEnd()), value.getRoute().getDistance());
+                    map.put(value.getRoute().getStart(), currNode);
+                    map.put(value.getRoute().getEnd(), new Node(value.getRoute().getEnd()));
+                } else {
+                    currNode.addNeighbor(map.get(value.getRoute().getEnd()), value.getRoute().getDistance());
+                    map.put(value.getRoute().getEnd(), map.get(value.getRoute().getEnd()));
+                }
             } else {
-                graph.get(value.getRoute().getStart()).addNeighbor(new Node(value.getRoute().getEnd()), value.getTime());
+                map.get(value.getRoute().getStart()).addNeighbor(new Node(value.getRoute().getEnd()), value.getRoute().getDistance());
             }
         }
+
+        // Create data for calling dijkstra later
+        Node firstNode = map.get(start);
+        Node lastNode = map.get(end);
+        Map<Node, Integer> distance = new HashMap<>();
+        Map<Node, Node> predecessors = new HashMap<>();
+        List<Node> route = new LinkedList<>();
+
+        // Add to routes from lastNode until firstNode
+        if (distance.get(lastNode) != null) {
+            Node currNode = lastNode;
+            while (!currNode.equals(firstNode)) {
+                route.add(0, currNode);
+                currNode = predecessors.get(currNode);
+            }
+            route.add(0, firstNode);
+        } else {
+            return result;
+        }
+
+        // Compare route list to Transportation values in map m and add to result if it is a path
+        for (int i = 0; i < route.size() - 1; i++) {
+
+            // Will be changed to first option after first iteration (mostly just a placeholder)
+            int maxTime = Integer.MAX_VALUE;
+
+            // Create Transportation id variable to add to result after determining if it is the cheapest
+            int id = 0;
+
+            // Iterate through m values now
+            for (Transportation value : m.values()) {
+                if (route.get(i).getName().equals(value.getRoute().getStart()) && route.get(i + 1).getName().equals(value.getRoute().getEnd())) {
+                    if (maxTime > value.getTime()) {
+                        maxTime = value.getTime();
+                        id = value.getId();
+                    }
+
+                }
+            }
+            result.add(m.get(id));
+        }
+
         return result;
     }
 }

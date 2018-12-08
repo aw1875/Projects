@@ -238,15 +238,15 @@ public class TestGetHome {
         testLeastStops();
         System.out.println();
 
-        /*testCanMakeHomeCost();
-        System.out.println();*/
+        testCanMakeHomeCost();
+        System.out.println();
 
         testShortestPath();
         System.out.println();
 
-        /*testCheapestPath();
+        testCheapestPath();
         System.out.println();
 
-        testQuickestPath();*/
+        testQuickestPath();
     }
 }

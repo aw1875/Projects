@@ -167,7 +167,7 @@ public class Graph {
             // this loop allows neighbors that have already been finalized
             // to be checked again, but they will never be updated and
             // this doesn't affect overall complexity 
-            for(Edge e : U.getEdges()) { 
+            for(Edge e : U.getEdges()) {
                 Integer w = e.getWeight();
                 Node n = e.getToNode();
                 // relaxation
