@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7d826014-2813-47b6-9557-223c63dbcf3d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stu/TravelAgency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stu/TravelAgency.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/TestReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/TestReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/TestTransportation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/TestTransportation.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,55 +17,7 @@
     </SUITE>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/stu/TravelAgency.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="61" column="51" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="51" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="imports" expanded="true" />
-                <element signature="e#1988#1989#0" expanded="true" />
-                <element signature="e#2016#2017#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tests/TestGetHome.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="229" column="32" lean-forward="true" selection-start-line="229" selection-start-column="32" selection-end-line="229" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dijkstras/Node.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-300">
-              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testReaderSample.txt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dijkstras/Graph.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1185">
-              <caret line="107" column="12" lean-forward="true" selection-start-line="107" selection-start-column="12" selection-end-line="107" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -98,8 +47,8 @@
         <option value="$PROJECT_DIR$/src/stu/Transportation.java" />
         <option value="$PROJECT_DIR$/src/stu/TransportationReader.java" />
         <option value="$PROJECT_DIR$/src/dijkstras/Graph.java" />
-        <option value="$PROJECT_DIR$/src/stu/TravelAgency.java" />
         <option value="$PROJECT_DIR$/src/tests/TestGetHome.java" />
+        <option value="$PROJECT_DIR$/src/stu/TravelAgency.java" />
       </list>
     </option>
   </component>
@@ -152,7 +101,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543612782526" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543612834148" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Homework Assignments/Homework #13/src/Calculator.java" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -239,7 +188,7 @@
       <workItem from="1543450959478" duration="819000" />
       <workItem from="1543519001144" duration="3087000" />
       <workItem from="1543528959404" duration="3177000" />
-      <workItem from="1543607449159" duration="4543000" />
+      <workItem from="1543607449159" duration="4645000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed project layout and added required text files">
       <created>1543451667284</created>
@@ -283,17 +232,23 @@
       <option name="project" value="LOCAL" />
       <updated>1543531054968</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added TestGetHome test and tried some functions in TravelAgency">
+      <created>1543612819683</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1543612819684</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11626000" />
+    <option name="totallyTimeSpent" value="11728000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1507" y="25" width="1373" height="875" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25345957" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25345957" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -303,7 +258,7 @@
       <window_info anchor="bottom" id="Duplicate detector" order="0" weight="0.32899868" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.32769832" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.32769832" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.39976415" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -336,7 +291,8 @@
     <MESSAGE value="Completed TransportationReader" />
     <MESSAGE value="Cleaned up all code and comments in all files and stubbed out all functions for TravelAgency" />
     <MESSAGE value="Added class level comment with my name" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added class level comment with my name" />
+    <MESSAGE value="Added TestGetHome test and tried some functions in TravelAgency" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added TestGetHome test and tried some functions in TravelAgency" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/testLarger.txt" />
@@ -434,9 +390,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testReaderSample.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dijkstras/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-300">
@@ -451,13 +404,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/TestGetHome.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="229" column="32" lean-forward="true" selection-start-line="229" selection-start-column="32" selection-end-line="229" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/stu/TransportationReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-224">
@@ -469,16 +415,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testReaderSample.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/stu/TravelAgency.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="61" column="51" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="51" />
+        <state relative-caret-position="270">
+          <caret line="77" column="34" lean-forward="true" selection-start-line="77" selection-start-column="34" selection-end-line="77" selection-end-column="34" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#1988#1989#0" expanded="true" />
             <element signature="e#2016#2017#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/TestGetHome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="229" column="32" lean-forward="true" selection-start-line="229" selection-start-column="32" selection-end-line="229" selection-end-column="32" />
         </state>
       </provider>
     </entry>
