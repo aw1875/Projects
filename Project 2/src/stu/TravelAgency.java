@@ -7,7 +7,8 @@
 package stu;
 
 import backtracking.*;
-import dijkstras.Graph;
+import dfs_bfs.*;
+import dfs_bfs.LinkedGraph;
 import dijkstras.Node;
 
 import java.util.*;
@@ -23,7 +24,34 @@ public class TravelAgency {
      * @return true if path exists, false otherwise
      */
     public static boolean isThereAPath(Map<Integer, Transportation> m, String start, String end) {
-        return false; // FOR NOW
+        // Create graph and routes ArrayList
+        dfs_bfs.Graph graph = new LinkedGraph();
+        ArrayList<Route> routes = new ArrayList<>();
+
+        // Populate ArrayList
+        for (Transportation value : m.values()) {
+            if (!routes.contains(value.getRoute())) {
+                routes.add(value.getRoute());
+            }
+        }
+
+        // Populate graph
+        for (Route route : routes) {
+            if (graph.hasNode(route.getStart()) && graph.hasNode(route.getEnd())) {
+                graph.addNeighbor(graph.getNode(route.getStart()), graph.getNode(route.getEnd()));
+            } else if (graph.hasNode(route.getStart()) && !graph.hasNode(route.getEnd())) {
+                dfs_bfs.Node endNode = graph.makeNode(route.getEnd());
+                graph.addNeighbor(endNode, graph.getNode(route.getStart()));
+            } else if (graph.hasNode(route.getEnd()) && !graph.hasNode(route.getStart())) {
+                dfs_bfs.Node startNode = graph.makeNode(route.getStart());
+                graph.addNeighbor(startNode, graph.getNode(route.getEnd()));
+            } else {
+                dfs_bfs.Node startNode = graph.makeNode(route.getStart());
+                dfs_bfs.Node endNode = graph.makeNode(route.getEnd());
+                graph.addNeighbor(graph.getNode(route.getStart()), graph.getNode(route.getEnd()));
+            }
+        }
+        return GraphSearching.canReachDFS(graph, start, end);
     }
 
     /**
@@ -35,7 +63,48 @@ public class TravelAgency {
      * @return the least number of stops to get home, or -1 if there is no path
      */
     public static int leastStops(Map<Integer, Transportation> m, String start, String end) {
-        return 0; // FOR NOW
+        int counter = -1;
+
+        // Create graph and routes ArrayList
+        Graph graph = new LinkedGraph();
+        ArrayList<Route> routes = new ArrayList<>();
+
+        // Populate ArrayList
+        for (Transportation value : m.values()) {
+            if (!routes.contains(value.getRoute())) {
+                routes.add(value.getRoute());
+            }
+        }
+
+        // Populate graph
+        for (Route route : routes) {
+            if (graph.hasNode(route.getStart()) && graph.hasNode(route.getEnd())) {
+                graph.addNeighbor(graph.getNode(route.getStart()), graph.getNode(route.getEnd()));
+            } else if (graph.hasNode(route.getStart()) && !graph.hasNode(route.getEnd())) {
+                dfs_bfs.Node endNode = graph.makeNode(route.getEnd());
+                graph.addNeighbor(endNode, graph.getNode(route.getStart()));
+            } else if (graph.hasNode(route.getEnd()) && !graph.hasNode(route.getStart())) {
+                dfs_bfs.Node startNode = graph.makeNode(route.getStart());
+                graph.addNeighbor(startNode, graph.getNode(route.getEnd()));
+            } else {
+                dfs_bfs.Node startNode = graph.makeNode(route.getStart());
+                dfs_bfs.Node endNode = graph.makeNode(route.getEnd());
+                graph.addNeighbor(graph.getNode(route.getStart()), graph.getNode(route.getEnd()));
+            }
+        }
+
+        // Iterate through BFS results and add to counter
+        Iterable<dfs_bfs.Node> iterable = GraphSearching.buildPathBFS(graph, start, end);
+        if (iterable == null) {
+            return -1;
+        } else {
+            Iterator iterator = iterable.iterator();
+            while (iterator.hasNext()) {
+                counter++;
+                iterator.next();
+            }
+        }
+        return counter;
     }
 
     /**
@@ -60,23 +129,21 @@ public class TravelAgency {
      * @return List of the Transportation's in the order they are used to get between the paths, or an empty List if no such path exits
      */
     public static List<Transportation> shortestPath(Map<Integer, Transportation> m, String start, String end) {
-
         // Create list of results
         List<Transportation> result = new LinkedList<>();
-        Map<String, Node> temp = new HashMap<>();
+        Map<String, Node> graph = new HashMap<>();
 
-        // Test
-        for (int i = 0; i < m.size(); i++) {
-            if (!temp.containsKey(m.get(i).getRoute().getStart())) {
-                Node currNode = new Node(String.valueOf(m.get(i).getRoute().getStart()));
-                temp.put(String.valueOf(m.get(i).getRoute().getStart()), currNode);
+        // Create graph
+        for (Transportation value : m.values()) {
+            Node currNode = new Node(value.getRoute().getStart());
+            if (!graph.containsKey(value.getRoute().getStart())) {
+                currNode.addNeighbor(new Node(value.getRoute().getEnd()), value.getRoute().getDistance());
+                graph.put(value.getRoute().getStart(), currNode);
             } else {
-                temp.get(String.valueOf(m.get(i).getRoute().getStart())).addNeighbor(new Node(String.valueOf(m.get(i).getRoute().getEnd())));
+                graph.get(value.getRoute().getStart()).addNeighbor(new Node(value.getRoute().getEnd()), value.getRoute().getDistance());
             }
         }
-
-        Graph g = new Graph(temp);
-
+        dijkstras.Graph dg = new dijkstras.Graph(graph);
 
         return result; // FOR NOW
     }
@@ -90,7 +157,21 @@ public class TravelAgency {
      * @return List of the Transportation's in the order they are used to get between the paths, or an empty List if no such path exists
      */
     public static List<Transportation> cheapestPath(Map<Integer, Transportation> m, String start, String end) {
-        return null; // FOR NOW
+        // Create list of results
+        List<Transportation> result = new LinkedList<>();
+        Map<String, Node> graph = new HashMap<>();
+
+        // Create graph
+        for (Transportation value : m.values()) {
+            Node currNode = new Node(value.getRoute().getStart());
+            if (!graph.containsKey(value.getRoute().getStart())) {
+                currNode.addNeighbor(new Node(value.getRoute().getEnd()), value.getCost());
+                graph.put(value.getRoute().getStart(), currNode);
+            } else {
+                graph.get(value.getRoute().getStart()).addNeighbor(new Node(value.getRoute().getEnd()), value.getCost());
+            }
+        }
+        return result;
     }
 
     /**
@@ -102,6 +183,20 @@ public class TravelAgency {
      * @return List of the Transportation's in the order they are used to get between the paths, or an empty List if no such path exists
      */
     public static List<Transportation> quickestPath(Map<Integer, Transportation> m, String start, String end) {
-        return null; // FOR NOW
+        // Create list of results
+        List<Transportation> result = new LinkedList<>();
+        Map<String, Node> graph = new HashMap<>();
+
+        // Create graph
+        for (Transportation value : m.values()) {
+            Node currNode = new Node(value.getRoute().getStart());
+            if (!graph.containsKey(value.getRoute().getStart())) {
+                currNode.addNeighbor(new Node(value.getRoute().getEnd()), value.getTime());
+                graph.put(value.getRoute().getStart(), currNode);
+            } else {
+                graph.get(value.getRoute().getStart()).addNeighbor(new Node(value.getRoute().getEnd()), value.getTime());
+            }
+        }
+        return result;
     }
 }

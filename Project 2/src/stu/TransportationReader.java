@@ -46,6 +46,7 @@ public class TransportationReader {
                     }
                 }
             }
+            bf.close();
             return map;
         } catch (FileNotFoundException e) {
             return map;
